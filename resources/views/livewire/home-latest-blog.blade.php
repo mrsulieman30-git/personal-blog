@@ -15,7 +15,7 @@
         <div x-data="{
             swiper: null,
             init() {
-                this.$nextTick(() => {
+                const initSwiper = () => {
                     if (typeof Swiper !== 'undefined' && this.$refs.blogSlider) {
                         this.swiper = new Swiper(this.$refs.blogSlider, {
                                     centeredSlides: true,
@@ -84,8 +84,11 @@
                                         },
                                     },
                                 });
+                    } else {
+                        setTimeout(initSwiper, 50);
                     }
-                });
+                };
+                initSwiper();
             }
         }">
 

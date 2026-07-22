@@ -76,7 +76,7 @@
                 <div x-data="{
                     swiper: null,
                     init() {
-                        this.$nextTick(() => {
+                        const initSwiper = () => {
                             if (typeof Swiper !== 'undefined' && this.$refs.slider) {
                                 const slideWidth = window.innerWidth < 640 ? 160 : (window.innerWidth < 768 ? 240 : 290);
                                 this.swiper = new Swiper(this.$refs.slider, {
@@ -146,8 +146,11 @@
                                         },
                                     },
                                 });
+                            } else {
+                                setTimeout(initSwiper, 50);
                             }
-                        });
+                        };
+                        initSwiper();
                     }
                 }" class="relative">
                     <div x-ref="slider" class="swiper ios-stack-slider !py-10 !overflow-visible max-w-5xl mx-auto" dir="ltr">

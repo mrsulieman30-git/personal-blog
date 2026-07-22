@@ -96,8 +96,8 @@
                     <a href="/blog" class="text-sm font-black uppercase tracking-wider transition-colors {{ request()->is('blog*') || request()->is('posts*') ? 'text-slate-950 font-black' : 'text-slate-400 hover:text-slate-950' }}">{{ __('Blog') }}</a>
                     
                     {{-- Language Switcher Dropdown --}}
-                    <div class="relative" x-data="{ langOpen: false }">
-                        <button @click="langOpen = !langOpen" @click.outside="langOpen = false" class="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+                    <div class="relative" x-data="{ langOpen: false }" @click.outside="langOpen = false">
+                        <button @click="langOpen = !langOpen" class="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
                             @if(app()->getLocale() == 'en')
                                 <img src="https://flagcdn.com/w40/us.png" alt="English" class="w-6 h-auto rounded-sm shadow-sm">
                             @elseif(app()->getLocale() == 'ar')

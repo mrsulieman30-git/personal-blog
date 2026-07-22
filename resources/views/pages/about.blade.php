@@ -330,7 +330,7 @@
 
         {{-- Image Container (Protected) --}}
         <div class="relative max-w-5xl w-full max-h-[90vh] flex items-center justify-center rounded-xl overflow-hidden shadow-2xl"
-             @click.away="modalOpen = false"
+             @click.outside="modalOpen = false"
              oncontextmenu="return false;" 
              ondragstart="return false;" 
              style="user-select: none; -webkit-user-drag: none;">

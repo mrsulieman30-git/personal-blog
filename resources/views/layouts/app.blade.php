@@ -97,7 +97,7 @@
                     
                     {{-- Language Switcher Dropdown --}}
                     <div class="relative" x-data="{ langOpen: false }">
-                        <button @click="langOpen = !langOpen" @click.away="langOpen = false" class="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+                        <button @click="langOpen = !langOpen" @click.outside="langOpen = false" class="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
                             @if(app()->getLocale() == 'en')
                                 <img src="https://flagcdn.com/w40/us.png" alt="English" class="w-6 h-auto rounded-sm shadow-sm">
                             @elseif(app()->getLocale() == 'ar')
@@ -107,7 +107,7 @@
                             @endif
                             <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div x-show="langOpen" x-transition.opacity class="absolute right-0 mt-2 w-auto bg-white rounded-xl shadow-xl border border-slate-100 py-2 px-1 z-50 flex flex-col items-center gap-1">
+                        <div x-show="langOpen" x-cloak x-transition.opacity class="absolute right-0 mt-2 w-auto bg-white rounded-xl shadow-xl border border-slate-100 py-2 px-1 z-50 flex flex-col items-center gap-1">
                             <a href="{{ route('lang.switch', 'en') }}" class="block p-2 hover:bg-slate-50 rounded-lg transition-colors" title="English"><img src="https://flagcdn.com/w40/us.png" alt="English" class="w-6 h-auto rounded-sm shadow-sm"></a>
                             <a href="{{ route('lang.switch', 'ar') }}" class="block p-2 hover:bg-slate-50 rounded-lg transition-colors" title="العربية"><img src="https://flagcdn.com/w40/sa.png" alt="Arabic" class="w-6 h-auto rounded-sm shadow-sm"></a>
                             <a href="{{ route('lang.switch', 'so') }}" class="block p-2 hover:bg-slate-50 rounded-lg transition-colors" title="Somali"><img src="https://flagcdn.com/w40/so.png" alt="Somali" class="w-6 h-auto rounded-sm shadow-sm"></a>

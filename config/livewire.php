@@ -2,7 +2,6 @@
 
 return [
 
-    'asset_url' => env('APP_URL', 'https://medblog.seeha.tech') . '/assets',
     /*
     |---------------------------------------------------------------------------
     | Class Namespace

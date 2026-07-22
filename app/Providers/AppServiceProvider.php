@@ -32,6 +32,10 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
+        \Livewire\Livewire::setScriptRoute(function ($handle) {
+            return \Illuminate\Support\Facades\Route::get('/assets/livewire/livewire.js', $handle);
+        });
+
         View::share('siteSettings', app(SettingsService::class));
     }
 }

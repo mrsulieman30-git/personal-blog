@@ -161,7 +161,7 @@ class BlogPostShow extends Component
             ->get();
 
         // Get related posts from the same category
-        $relatedPosts = BlogPost::where('category_id', $this->post->category_id)
+        $relatedPosts = BlogPost::where('blog_category_id', $this->post->blog_category_id)
             ->where('id', '!=', $this->post->id)
             ->where('is_published', true)
             ->latest()

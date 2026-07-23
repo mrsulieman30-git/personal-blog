@@ -338,6 +338,89 @@
         </div>
     </footer>
 
+    {{-- Floating Compact Language Switcher (About & Single Post Pages Only) --}}
+    @if(request()->is('about') || request()->is('posts/*') || request()->is('blog/*'))
+        <div 
+            x-data="{ 
+                open: false, 
+                dismissed: false,
+                switchLang(url) {
+                    sessionStorage.setItem('restoreScrollPos', window.scrollY);
+                    window.location.href = url;
+                }
+            }"
+            x-init="
+                if (sessionStorage.getItem('restoreScrollPos')) {
+                    const savedPos = parseInt(sessionStorage.getItem('restoreScrollPos'));
+                    sessionStorage.removeItem('restoreScrollPos');
+                    window.scrollTo({ top: savedPos, behavior: 'instant' });
+                }
+            "
+            x-show="!dismissed"
+            x-cloak
+            class="fixed bottom-5 end-5 z-40 print:hidden flex items-center gap-1.5 select-none"
+        >
+            <div class="bg-slate-950/90 text-white backdrop-blur-md border border-slate-800 shadow-2xl rounded-full p-1.5 flex items-center gap-1">
+                
+                {{-- Active Flag Button --}}
+                <button 
+                    @click="open = !open" 
+                    type="button" 
+                    class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-800/80 hover:bg-slate-700 text-xs font-bold transition-colors cursor-pointer"
+                    aria-label="Switch Language"
+                >
+                    @if(app()->getLocale() == 'en')
+                        <img src="https://flagcdn.com/w40/us.png" alt="EN" class="w-4 h-auto rounded-xs shadow-xs shrink-0">
+                        <span class="text-[11px] uppercase tracking-wider font-extrabold text-slate-200">EN</span>
+                    @elseif(app()->getLocale() == 'ar')
+                        <img src="https://flagcdn.com/w40/sa.png" alt="AR" class="w-4 h-auto rounded-xs shadow-xs shrink-0">
+                        <span class="text-[11px] uppercase tracking-wider font-extrabold text-slate-200">عربي</span>
+                    @elseif(app()->getLocale() == 'so')
+                        <img src="https://flagcdn.com/w40/so.png" alt="SO" class="w-4 h-auto rounded-xs shadow-xs shrink-0">
+                        <span class="text-[11px] uppercase tracking-wider font-extrabold text-slate-200">SO</span>
+                    @endif
+                    <svg class="w-3 h-3 text-slate-400 transition-transform duration-200" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+
+                {{-- Flag Options Dropdown --}}
+                <div 
+                    x-show="open" 
+                    @click.outside="open = false"
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 scale-95"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    class="flex items-center gap-1 px-1"
+                >
+                    @if(app()->getLocale() !== 'en')
+                        <button @click="switchLang('{{ route('lang.switch', 'en') }}')" type="button" class="p-1 hover:bg-slate-800 rounded-full transition-colors cursor-pointer" title="English">
+                            <img src="https://flagcdn.com/w40/us.png" alt="English" class="w-5 h-auto rounded-xs shadow-xs">
+                        </button>
+                    @endif
+                    @if(app()->getLocale() !== 'ar')
+                        <button @click="switchLang('{{ route('lang.switch', 'ar') }}')" type="button" class="p-1 hover:bg-slate-800 rounded-full transition-colors cursor-pointer" title="العربية">
+                            <img src="https://flagcdn.com/w40/sa.png" alt="Arabic" class="w-5 h-auto rounded-xs shadow-xs">
+                        </button>
+                    @endif
+                    @if(app()->getLocale() !== 'so')
+                        <button @click="switchLang('{{ route('lang.switch', 'so') }}')" type="button" class="p-1 hover:bg-slate-800 rounded-full transition-colors cursor-pointer" title="Somali">
+                            <img src="https://flagcdn.com/w40/so.png" alt="Somali" class="w-5 h-auto rounded-xs shadow-xs">
+                        </button>
+                    @endif
+                </div>
+
+                {{-- Close / Dismiss Button --}}
+                <button 
+                    @click="dismissed = true" 
+                    type="button" 
+                    class="w-5 h-5 flex items-center justify-center rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors ml-0.5 cursor-pointer"
+                    title="Close language switcher"
+                >
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+    @endif
+
     @livewireScripts
 </body>
 </html>

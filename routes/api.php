@@ -7,7 +7,7 @@ use App\Models\BlogPost;
 Route::post('/blog/publish', function (Request $request) {
     // Simple token auth
     $token = $request->query('token', '');
-    $secretToken = env('BLOG_PUBLISH_TOKEN');
+    $secretToken = config('app.blog_publish_token') ?? env('BLOG_PUBLISH_TOKEN');
     if (empty($secretToken) || $token !== $secretToken) {
         return response()->json(['success' => false, 'error' => 'Unauthorized'], 401);
     }

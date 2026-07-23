@@ -123,4 +123,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'blog_publish_token' => env('BLOG_PUBLISH_TOKEN'),
+
 ];

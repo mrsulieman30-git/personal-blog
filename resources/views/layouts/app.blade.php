@@ -74,8 +74,8 @@
             checkScroll() { this.scrolled = window.scrollY > 20; }
         }"
         x-init="checkScroll(); window.addEventListener('scroll', () => checkScroll())"
-        :class="scrolled ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200/60 shadow-md py-3' : 'bg-white/60 backdrop-blur-md border-b border-slate-200/30 py-4'"
-        class="sticky top-0 z-50 transition-all duration-300 print:hidden"
+        :class="scrolled ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200/60 shadow-md py-3' : 'bg-white/70 backdrop-blur-md border-b border-slate-200/30 py-4'"
+        class="fixed top-0 inset-x-0 z-50 transition-all duration-300 print:hidden"
     >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -264,7 +264,7 @@
     </nav>
 
     {{-- Main Content --}}
-    <main class="min-h-screen">
+    <main class="min-h-screen pt-24 sm:pt-28">
         @yield('content')
         {{ $slot ?? '' }}
     </main>

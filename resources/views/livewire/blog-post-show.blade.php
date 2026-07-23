@@ -1,20 +1,26 @@
+@php
+    $ogImage = $post->display_image;
+    if (str_contains($ogImage, 'unsplash.com')) {
+        $ogImage = str_replace(['w=1200', 'w=800'], 'w=600&q=70', $ogImage);
+    }
+@endphp
 @section('seo')
     <title>{{ $post->title }} | {{ config('app.name') }}</title>
     <meta name="description" content="{{ $post->excerpt }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ request()->fullUrl() }}">
+    <meta property="og:url" content="{!! request()->fullUrl() !!}">
     <meta property="og:title" content="{{ $post->title }}">
     <meta property="og:description" content="{{ $post->excerpt }}">
-    <meta property="og:image" content="{{ $post->display_image }}">
+    <meta property="og:image" content="{!! $ogImage !!}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ request()->fullUrl() }}">
+    <meta property="twitter:url" content="{!! request()->fullUrl() !!}">
     <meta property="twitter:title" content="{{ $post->title }}">
     <meta property="twitter:description" content="{{ $post->excerpt }}">
-    <meta property="twitter:image" content="{{ $post->display_image }}">
+    <meta property="twitter:image" content="{!! $ogImage !!}">
 @endsection
 
 <div class="bg-white min-h-screen font-sans print:bg-white">

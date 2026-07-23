@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
+<html class="overflow-x-hidden" lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,17 +20,17 @@
 
         {{-- Open Graph / Facebook --}}
         <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ request()->fullUrl() }}">
+        <meta property="og:url" content="{!! request()->fullUrl() !!}">
         <meta property="og:title" content="{{ $siteName }}">
         <meta property="og:description" content="{{ $siteDescription }}">
-        <meta property="og:image" content="{{ $defaultOgImage }}">
+        <meta property="og:image" content="{!! $defaultOgImage !!}">
 
         {{-- Twitter --}}
         <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="{{ request()->fullUrl() }}">
+        <meta property="twitter:url" content="{!! request()->fullUrl() !!}">
         <meta property="twitter:title" content="{{ $siteName }}">
         <meta property="twitter:description" content="{{ $siteDescription }}">
-        <meta property="twitter:image" content="{{ $defaultOgImage }}">
+        <meta property="twitter:image" content="{!! $defaultOgImage !!}">
     @endif
     @stack('seo')
 
@@ -81,10 +81,10 @@
             <div class="flex justify-between items-center h-16">
 
                 {{-- Logo Emblem & Name Text --}}
-                <div class="flex items-center shrink-0">
-                    <a href="/" class="flex items-center gap-3.5 group">
-                        <img src="/images/ms_monogram_transparent.png" alt="MS Monogram" class="h-12 sm:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
-                        <span class="text-slate-950 font-black text-2xl sm:text-3xl tracking-tight">Mohammad Sulieman</span>
+                <div class="flex items-center min-w-0">
+                    <a href="/" class="flex items-center gap-2 sm:gap-3.5 group min-w-0">
+                        <img src="/images/ms_monogram_transparent.png" alt="MS Monogram" class="h-9 sm:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300 shrink-0">
+                        <span class="text-slate-950 font-black text-lg sm:text-2xl md:text-3xl tracking-tight truncate">Mohammad Sulieman</span>
                     </a>
                 </div>
 

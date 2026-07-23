@@ -23,7 +23,7 @@
     <meta property="twitter:image" content="{!! $ogImage !!}">
 @endsection
 
-<div class="bg-white min-h-screen font-sans print:bg-white">
+<div class="bg-white min-h-screen font-sans print:bg-white -mt-32 sm:-mt-40">
     <!-- Web UI -->
     <div class="print:hidden">
 
@@ -39,7 +39,7 @@
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950/30 via-transparent to-slate-950/30"></div>
 
         <!-- Back Button — Top Left -->
-        <div class="absolute top-0 left-0 right-0 z-30">
+        <div class="absolute top-32 sm:top-40 left-0 right-0 z-30">
             <div class="container mx-auto px-4 md:px-8 max-w-5xl py-5 flex items-center justify-between">
                 <a href="{{ $post->type === 'ad' ? '/offers' : '/blog' }}" class="flex items-center gap-2 text-white/80 hover:text-white text-sm font-semibold transition-colors group backdrop-blur-sm bg-white/10 px-4 py-2 rounded-full">
                     <x-heroicon-m-arrow-left class="w-4 h-4 group-hover:-translate-x-1 transition-transform" />

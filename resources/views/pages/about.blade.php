@@ -18,7 +18,7 @@
 }">
 
     {{-- Hero Section --}}
-    <section class="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 py-20 md:py-28 overflow-hidden">
+    <section class="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden -mt-32 sm:-mt-40">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-20 start-10 w-72 h-72 bg-indigo-500 rounded-full blur-[120px]"></div>
             <div class="absolute bottom-10 end-20 w-96 h-96 bg-purple-600 rounded-full blur-[150px]"></div>

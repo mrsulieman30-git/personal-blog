@@ -64,12 +64,11 @@
 
     <style>[x-cloak] { display: none !important; }</style>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-[#f1f3f6] overflow-x-clip select-none" style="font-family: 'Inter', sans-serif;">
+<body x-data="{ mobileMenuOpen: false }" class="font-sans antialiased text-gray-800 bg-[#f1f3f6] overflow-x-clip select-none" style="font-family: 'Inter', sans-serif;">
 
     {{-- Navigation --}}
     <nav 
         x-data="{ 
-            mobileMenuOpen: false, 
             scrolled: false,
             checkScroll() { this.scrolled = window.scrollY > 20; }
         }"
@@ -150,6 +149,7 @@
                 </div>
             </div>
         </div>
+    </nav>
 
         {{-- Mobile Sliding Drawer Backdrop --}}
         <div 
@@ -212,14 +212,17 @@
                     <div class="mt-4 pt-4 border-t border-slate-800">
                         <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-3">Language</p>
                         <div class="grid grid-cols-3 gap-2">
-                            <a href="{{ route('lang.switch', 'en') }}" class="flex items-center justify-center p-3 rounded-xl {{ app()->getLocale() == 'en' ? 'bg-indigo-600/20 border border-indigo-500/30' : 'bg-slate-900 hover:bg-slate-800' }} transition-colors" title="English">
-                                <img src="https://flagcdn.com/w40/us.png" alt="English" class="w-7 h-auto rounded shadow-sm">
+                            <a href="{{ route('lang.switch', 'en') }}" class="flex flex-col items-center justify-center gap-1.5 p-3 rounded-2xl {{ app()->getLocale() == 'en' ? 'bg-indigo-600 text-white font-black' : 'bg-slate-900 text-slate-300 hover:bg-slate-800' }} transition-colors" title="English">
+                                <img src="https://flagcdn.com/w40/us.png" alt="English" class="w-7 h-5 object-cover rounded-sm shadow-xs shrink-0">
+                                <span class="text-[10px] font-black uppercase tracking-wider">English</span>
                             </a>
-                            <a href="{{ route('lang.switch', 'ar') }}" class="flex items-center justify-center p-3 rounded-xl {{ app()->getLocale() == 'ar' ? 'bg-indigo-600/20 border border-indigo-500/30' : 'bg-slate-900 hover:bg-slate-800' }} transition-colors" title="العربية">
-                                <img src="https://flagcdn.com/w40/sa.png" alt="Arabic" class="w-7 h-auto rounded shadow-sm">
+                            <a href="{{ route('lang.switch', 'ar') }}" class="flex flex-col items-center justify-center gap-1.5 p-3 rounded-2xl {{ app()->getLocale() == 'ar' ? 'bg-indigo-600 text-white font-black' : 'bg-slate-900 text-slate-300 hover:bg-slate-800' }} transition-colors" title="العربية">
+                                <img src="https://flagcdn.com/w40/sa.png" alt="Arabic" class="w-7 h-5 object-cover rounded-sm shadow-xs shrink-0">
+                                <span class="text-[10px] font-black uppercase tracking-wider">العربية</span>
                             </a>
-                            <a href="{{ route('lang.switch', 'so') }}" class="flex items-center justify-center p-3 rounded-xl {{ app()->getLocale() == 'so' ? 'bg-indigo-600/20 border border-indigo-500/30' : 'bg-slate-900 hover:bg-slate-800' }} transition-colors" title="Somali">
-                                <img src="https://flagcdn.com/w40/so.png" alt="Somali" class="w-7 h-auto rounded shadow-sm">
+                            <a href="{{ route('lang.switch', 'so') }}" class="flex flex-col items-center justify-center gap-1.5 p-3 rounded-2xl {{ app()->getLocale() == 'so' ? 'bg-indigo-600 text-white font-black' : 'bg-slate-900 text-slate-300 hover:bg-slate-800' }} transition-colors" title="Somali">
+                                <img src="https://flagcdn.com/w40/so.png" alt="Somali" class="w-7 h-5 object-cover rounded-sm shadow-xs shrink-0">
+                                <span class="text-[10px] font-black uppercase tracking-wider">Somali</span>
                             </a>
                         </div>
                     </div>
@@ -261,10 +264,10 @@
                 </div>
             </div>
         </div>
-    </nav>
+
 
     {{-- Main Content --}}
-    <main class="min-h-screen pt-24 sm:pt-28">
+    <main class="min-h-screen pt-32 sm:pt-40">
         @yield('content')
         {{ $slot ?? '' }}
     </main>

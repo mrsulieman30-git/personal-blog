@@ -11,14 +11,14 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="{!! request()->fullUrl() !!}">
-    <meta property="og:title" content="{{ $post->title }}">
+    <meta property="og:title" content="{{ $post->title }} | {{ config('app.name') }}">
     <meta property="og:description" content="{{ $post->excerpt }}">
     <meta property="og:image" content="{!! $ogImage !!}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{!! request()->fullUrl() !!}">
-    <meta property="twitter:title" content="{{ $post->title }}">
+    <meta property="twitter:title" content="{{ $post->title }} | {{ config('app.name') }}">
     <meta property="twitter:description" content="{{ $post->excerpt }}">
     <meta property="twitter:image" content="{!! $ogImage !!}">
 @endsection

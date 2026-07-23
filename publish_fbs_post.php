@@ -15,7 +15,7 @@ $category = BlogCategory::firstOrCreate(
 );
 
 // -----------------------------------------------------------------------------
-// 2. ENGLISH CONTENT (SCIENTIFICALLY AUDITED)
+// 2. ENGLISH CONTENT (SCIENTIFICALLY AUDITED & ELEGANT FORMULAS)
 // -----------------------------------------------------------------------------
 $content_en = <<<HTML
 <div class="paper-post-body" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1c1917; line-height: 1.8; font-size: 1.05rem;">
@@ -58,13 +58,24 @@ $content_en = <<<HTML
         <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem;">
             🧪 3. Enzymatic Reaction Principle (Glucose Oxidase - GOD-POD Method)
         </h3>
-        <p style="color: #334155; margin-bottom: 1rem;">
+        <p style="color: #334155; margin-bottom: 1.25rem;">
             Glucose in the sample is enzymatically oxidized by <strong>Glucose Oxidase (GOD)</strong> to gluconic acid and hydrogen peroxide (H₂O₂). In the presence of <strong>Peroxidase (POD)</strong>, hydrogen peroxide reacts with 4-aminoantipyrine (4-AAP) and phenol to form a pink/red quinoneimine dye.
         </p>
-        <div style="background-color: #f3efe6; border-radius: 0.5rem; padding: 1rem; font-family: monospace; font-size: 0.95rem; color: #0f172a; text-align: center; font-weight: 700; border: 1px dashed #d6cebe; margin-bottom: 1rem; line-height: 1.6;">
-            Glucose + O₂ + H₂O &nbsp;&xrightarrow{\text{GOD}}&nbsp; Gluconic Acid + H₂O₂<br>
-            2 H₂O₂ + 4-AAP + Phenol &nbsp;&xrightarrow{\text{POD}}&nbsp; Quinoneimine Dye (Pink/Red) + 4 H₂O
+        
+        <!-- Elegant Equation display -->
+        <div style="background-color: #fcfbfa; border: 1px solid #e7e2d8; border-radius: 0.75rem; padding: 1.25rem; margin-bottom: 1.25rem; text-align: center; font-family: Georgia, Cambria, 'Times New Roman', Times, serif;">
+            <div style="font-size: 1.15rem; color: #1c1917; margin-bottom: 0.75rem; line-height: 1.6;">
+                <span style="font-weight: 600;">Glucose</span> + O<sub>2</sub> + H<sub>2</sub>O 
+                <span style="color: #0f766e; font-weight: 600; margin: 0 0.75rem;">&mdash;&mdash;&gt; [ GOD ] &mdash;&mdash;&gt;</span> 
+                Gluconic Acid + H<sub>2</sub>O<sub>2</sub>
+            </div>
+            <div style="font-size: 1.15rem; color: #1c1917; line-height: 1.6;">
+                2 H<sub>2</sub>O<sub>2</sub> + 4-AAP + Phenol 
+                <span style="color: #0f766e; font-weight: 600; margin: 0 0.75rem;">&mdash;&mdash;&gt; [ POD ] &mdash;&mdash;&gt;</span> 
+                <span style="color: #b91c1c; font-weight: 600;">Quinoneimine Dye</span> + 4 H<sub>2</sub>O
+            </div>
         </div>
+
         <p style="color: #475569; font-size: 0.95rem; margin-bottom: 0;">
             The intensity of the quinoneimine complex color is directly proportional to the glucose concentration, measured photometrically at <strong>500 nm (492–550 nm)</strong> against a reagent blank.
         </p>
@@ -246,7 +257,7 @@ $content_en = <<<HTML
 HTML;
 
 // -----------------------------------------------------------------------------
-// 3. ARABIC CONTENT (SCIENTIFICALLY AUDITED & EXACT TRANSLATION)
+// 3. ARABIC CONTENT (SCIENTIFICALLY AUDITED & ELEGANT FORMULAS)
 // -----------------------------------------------------------------------------
 $content_ar = <<<HTML
 <div class="paper-post-body" dir="rtl" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1c1917; line-height: 1.9; font-size: 1.05rem;">
@@ -289,13 +300,24 @@ $content_ar = <<<HTML
         <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem;">
             🧪 3. المبدأ الإنزيمي للتفاعل (طريقة GOD-POD)
         </h3>
-        <p style="color: #334155; margin-bottom: 1rem;">
+        <p style="color: #334155; margin-bottom: 1.25rem;">
             يُأكسد الجلوكوز في العينة إنزيميًا بواسطة إنزيم <strong>Glucose Oxidase (GOD)</strong> ليتحول إلى حمض الجلوكونيك وفوق أكسيد الهيدروجين (H₂O₂). يتفاعل H₂O₂ بعد ذلك مع 4-aminoantipyrine والفينول بوجود إنزيم <strong>Peroxidase (POD)</strong> لإنتاج مركب الكينونيمين الملون (الوردي/الأحمر).
         </p>
-        <div dir="ltr" style="background-color: #f3efe6; border-radius: 0.5rem; padding: 1rem; font-family: monospace; font-size: 0.95rem; color: #0f172a; text-align: center; font-weight: 700; border: 1px dashed #d6cebe; margin-bottom: 1rem; line-height: 1.6;">
-            Glucose + O₂ + H₂O &nbsp;&xrightarrow{\text{GOD}}&nbsp; Gluconic Acid + H₂O₂<br>
-            2 H₂O₂ + 4-AAP + Phenol &nbsp;&xrightarrow{\text{POD}}&nbsp; Quinoneimine Dye + 4 H₂O
+
+        <!-- Elegant Equation display (Arabic layout) -->
+        <div dir="ltr" style="background-color: #fcfbfa; border: 1px solid #e7e2d8; border-radius: 0.75rem; padding: 1.25rem; margin-bottom: 1.25rem; text-align: center; font-family: Georgia, Cambria, 'Times New Roman', Times, serif;">
+            <div style="font-size: 1.15rem; color: #1c1917; margin-bottom: 0.75rem; line-height: 1.6;">
+                <span style="font-weight: 600;">Glucose</span> + O<sub>2</sub> + H<sub>2</sub>O 
+                <span style="color: #0f766e; font-weight: 600; margin: 0 0.75rem;">&mdash;&mdash;&gt; [ GOD ] &mdash;&mdash;&gt;</span> 
+                Gluconic Acid + H<sub>2</sub>O<sub>2</sub>
+            </div>
+            <div style="font-size: 1.15rem; color: #1c1917; line-height: 1.6;">
+                2 H<sub>2</sub>O<sub>2</sub> + 4-AAP + Phenol 
+                <span style="color: #0f766e; font-weight: 600; margin: 0 0.75rem;">&mdash;&mdash;&gt; [ POD ] &mdash;&mdash;&gt;</span> 
+                <span style="color: #b91c1c; font-weight: 600;">Quinoneimine Dye</span> + 4 H<sub>2</sub>O
+            </div>
         </div>
+
         <p style="color: #475569; font-size: 0.95rem; margin-bottom: 0;">
             تتناسب شدة امتصاص مركب الكينونيمين طرديًا مع تركيز الجلوكوز في العينة، وتُقاس طيفيًا عند طول موجي <strong>500 نانومتر (النطاق 492–550 نانومتر)</strong> مقابل محدد الكاشف (Blank).
         </p>
@@ -477,7 +499,7 @@ $content_ar = <<<HTML
 HTML;
 
 // -----------------------------------------------------------------------------
-// 4. SOMALI CONTENT (SCIENTIFICALLY AUDITED & EXACT TRANSLATION)
+// 4. SOMALI CONTENT (SCIENTIFICALLY AUDITED & ELEGANT FORMULAS)
 // -----------------------------------------------------------------------------
 $content_so = <<<HTML
 <div class="paper-post-body" style="font-family: system-ui, -apple-system, sans-serif; color: #1c1917; line-height: 1.8; font-size: 1.05rem;">
@@ -520,13 +542,24 @@ $content_so = <<<HTML
         <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem;">
             🧪 3. Mabda'a Enzyme-ka (GOD-POD Method)
         </h3>
-        <p style="color: #334155; margin-bottom: 1rem;">
+        <p style="color: #334155; margin-bottom: 1.25rem;">
             Glucose-ka muunadda waxaa habka enzyme-ka ah ku oksiidsheeya <strong>Glucose Oxidase (GOD)</strong> si uu u sameeyo gluconic acid iyo hydrogen peroxide (H₂O₂). Hydrogen peroxide wuxuu la falgalaa 4-aminoantipyrine iyo phenol isagoo kaashanaya <strong>Peroxidase (POD)</strong> si uu u soo saaro midab pink/red quinoneimine ah.
         </p>
-        <div style="background-color: #f3efe6; border-radius: 0.5rem; padding: 1rem; font-family: monospace; font-size: 0.95rem; color: #0f172a; text-align: center; font-weight: 700; border: 1px dashed #d6cebe; margin-bottom: 1rem; line-height: 1.6;">
-            Glucose + O₂ + H₂O &nbsp;&xrightarrow{\text{GOD}}&nbsp; Gluconic Acid + H₂O₂<br>
-            2 H₂O₂ + 4-AAP + Phenol &nbsp;&xrightarrow{\text{POD}}&nbsp; Quinoneimine Dye + 4 H₂O
+
+        <!-- Elegant Equation display -->
+        <div style="background-color: #fcfbfa; border: 1px solid #e7e2d8; border-radius: 0.75rem; padding: 1.25rem; margin-bottom: 1.25rem; text-align: center; font-family: Georgia, Cambria, 'Times New Roman', Times, serif;">
+            <div style="font-size: 1.15rem; color: #1c1917; margin-bottom: 0.75rem; line-height: 1.6;">
+                <span style="font-weight: 600;">Glucose</span> + O<sub>2</sub> + H<sub>2</sub>O 
+                <span style="color: #0f766e; font-weight: 600; margin: 0 0.75rem;">&mdash;&mdash;&gt; [ GOD ] &mdash;&mdash;&gt;</span> 
+                Gluconic Acid + H<sub>2</sub>O<sub>2</sub>
+            </div>
+            <div style="font-size: 1.15rem; color: #1c1917; line-height: 1.6;">
+                2 H<sub>2</sub>O<sub>2</sub> + 4-AAP + Phenol 
+                <span style="color: #0f766e; font-weight: 600; margin: 0 0.75rem;">&mdash;&mdash;&gt; [ POD ] &mdash;&mdash;&gt;</span> 
+                <span style="color: #b91c1c; font-weight: 600;">Quinoneimine Dye</span> + 4 H<sub>2</sub>O
+            </div>
         </div>
+
         <p style="color: #475569; font-size: 0.95rem; margin-bottom: 0;">
             Xoojinta midabka waa toos proportional heerka glucose-ka muunadda, waxaana lagu cabbiraa photometer ama analyzer wavelength <strong>500 nm (492–550 nm)</strong>.
         </p>
@@ -724,7 +757,7 @@ $data = [
     'featured_image_url' => 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80',
 ];
 
-// 6. Save directly to Database using Spatie Translatable BlogPost model
+// 6. Save directly to Database
 $post = BlogPost::firstOrNew(['slug' => $data['slug']]);
 
 $post->setTranslation('title', 'en', $data['title_en']);
@@ -748,6 +781,6 @@ $post->save();
 
 echo "Post updated & saved with ID: " . $post->id . "\n";
 
-// 7. Save template payload JSON for OpenClaw / Future automation
+// 7. Save template payload JSON
 file_put_contents(__DIR__ . '/fbs_post_template.json', json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 echo "Updated template payload saved to fbs_post_template.json\n";

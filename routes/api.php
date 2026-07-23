@@ -26,6 +26,7 @@ Route::post('/blog/publish', function (Request $request) {
         'excerpt_so' => 'nullable|string|max:255',
         'is_published' => 'nullable|boolean',
         'blog_category_id' => 'nullable|integer|exists:blog_categories,id',
+        'featured_image_url' => 'nullable|url|max:2048',
     ]);
     
     try {
@@ -61,6 +62,9 @@ Route::post('/blog/publish', function (Request $request) {
         $post->is_published = $data['is_published'] ?? true;
         if (!empty($data['blog_category_id'])) {
             $post->blog_category_id = $data['blog_category_id'];
+        }
+        if (!empty($data['featured_image_url'])) {
+            $post->featured_image_url = $data['featured_image_url'];
         }
         
         $post->save();

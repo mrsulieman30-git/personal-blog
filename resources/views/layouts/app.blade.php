@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="overflow-x-hidden" lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
+<html class="overflow-x-clip" lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,7 +64,7 @@
 
     <style>[x-cloak] { display: none !important; }</style>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-[#f1f3f6] overflow-x-hidden select-none" style="font-family: 'Inter', sans-serif;">
+<body class="font-sans antialiased text-gray-800 bg-[#f1f3f6] overflow-x-clip select-none" style="font-family: 'Inter', sans-serif;">
 
     {{-- Navigation --}}
     <nav 
@@ -74,7 +74,7 @@
             checkScroll() { this.scrolled = window.scrollY > 20; }
         }"
         x-init="checkScroll(); window.addEventListener('scroll', () => checkScroll())"
-        :class="scrolled ? 'bg-white/0 backdrop-blur-xl border-b border-slate-200/60 shadow-sm py-3' : 'bg-transparent border-transparent py-6'"
+        :class="scrolled ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200/60 shadow-md py-3' : 'bg-white/60 backdrop-blur-md border-b border-slate-200/30 py-4'"
         class="sticky top-0 z-50 transition-all duration-300 print:hidden"
     >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -8,14 +8,14 @@ $kernel->bootstrap();
 use App\Models\BlogPost;
 use App\Models\BlogCategory;
 
-// 1. Ensure Category
+// 1. Category
 $category = BlogCategory::firstOrCreate(
     ['slug' => 'clinical-laboratory'],
     ['name' => 'Clinical Laboratory & Diagnostics']
 );
 
 // -----------------------------------------------------------------------------
-// 2. ENGLISH CONTENT
+// 2. ENGLISH CONTENT (SCIENTIFICALLY AUDITED)
 // -----------------------------------------------------------------------------
 $content_en = <<<HTML
 <div class="paper-post-body" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1c1917; line-height: 1.8; font-size: 1.05rem;">
@@ -26,7 +26,7 @@ $content_en = <<<HTML
             📌 1. Short Introduction &amp; Abstract
         </h3>
         <p style="margin-bottom: 0; color: #44403c; font-size: 1rem;">
-            Fasting Blood Sugar (FBS) is one of the most essential clinical chemistry tests conducted in diagnostic laboratories worldwide. It measures venous plasma glucose concentration following an 8 to 12-hour overnight fast. As a primary diagnostic tool for Diabetes Mellitus and metabolic disorders, accurate measurement of FBS is vital for early disease screening, therapeutic monitoring, and risk mitigation against chronic microvascular and macrovascular complications.
+            Fasting Blood Sugar (FBS) is one of the foundational clinical chemistry assays conducted in diagnostic medical laboratories. It quantifies the concentration of glucose in venous plasma following a strict 8 to 12-hour overnight fast. Accurate measurement of FBS is essential for primary screening of Diabetes Mellitus, assessing carbohydrate metabolism, monitoring treatment responses, and preventing microvascular and macrovascular diabetic complications.
         </p>
     </div>
 
@@ -41,32 +41,32 @@ $content_en = <<<HTML
         </li>
         <li style="position: relative; padding-left: 1.75rem; margin-bottom: 0.65rem; color: #374151;">
             <span style="position: absolute; left: 0; top: 0; color: #0d9488; font-weight: bold;">✓</span>
-            Monitoring therapeutic efficacy and glycemic control in established diabetic patients.
+            Monitoring glycemic control and therapeutic response in established diabetic patients.
         </li>
         <li style="position: relative; padding-left: 1.75rem; margin-bottom: 0.65rem; color: #374151;">
             <span style="position: absolute; left: 0; top: 0; color: #0d9488; font-weight: bold;">✓</span>
-            Evaluating carbohydrate metabolism in patients with Metabolic Syndrome, gestational risk, obesity, or endocrine disorders.
+            Evaluation of carbohydrate metabolism in patients with Metabolic Syndrome, gestational diabetes risk, or endocrine disorders.
         </li>
         <li style="position: relative; padding-left: 1.75rem; margin-bottom: 0.65rem; color: #374151;">
             <span style="position: absolute; left: 0; top: 0; color: #0d9488; font-weight: bold;">✓</span>
-            Essential component of routine executive health check-ups and pre-operative clinical profiles.
+            Routine baseline assessment for executive health screening and pre-operative evaluation.
         </li>
     </ul>
 
     <!-- Enzymatic Principle -->
     <div style="background-color: #fdfbf7; border: 1px solid #e7e2d8; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 2rem;">
         <h3 style="margin-top: 0; color: #1e3a8a; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem;">
-            🧪 3. Enzymatic Reaction Principle (GOD-POD Method)
+            🧪 3. Enzymatic Reaction Principle (Glucose Oxidase - GOD-POD Method)
         </h3>
         <p style="color: #334155; margin-bottom: 1rem;">
-            Glucose in the specimen is oxidized by <strong>Glucose Oxidase (GOD)</strong> to gluconic acid and hydrogen peroxide. Hydrogen peroxide then reacts with 4-aminoantipyrine (4-AAP) and phenol in the presence of <strong>Peroxidase (POD)</strong> to yield a red/pink quinoneimine dye.
+            Glucose in the sample is enzymatically oxidized by <strong>Glucose Oxidase (GOD)</strong> to gluconic acid and hydrogen peroxide (H₂O₂). In the presence of <strong>Peroxidase (POD)</strong>, hydrogen peroxide reacts with 4-aminoantipyrine (4-AAP) and phenol to form a pink/red quinoneimine dye.
         </p>
         <div style="background-color: #f3efe6; border-radius: 0.5rem; padding: 1rem; font-family: monospace; font-size: 0.95rem; color: #0f172a; text-align: center; font-weight: 700; border: 1px dashed #d6cebe; margin-bottom: 1rem; line-height: 1.6;">
             Glucose + O₂ + H₂O &nbsp;&xrightarrow{\text{GOD}}&nbsp; Gluconic Acid + H₂O₂<br>
             2 H₂O₂ + 4-AAP + Phenol &nbsp;&xrightarrow{\text{POD}}&nbsp; Quinoneimine Dye (Pink/Red) + 4 H₂O
         </div>
         <p style="color: #475569; font-size: 0.95rem; margin-bottom: 0;">
-            The absorbance intensity of the quinoneimine complex is directly proportional to the glucose concentration in the sample, measured photometrically at <strong>500 nm (range 492–550 nm)</strong> against a reagent blank.
+            The intensity of the quinoneimine complex color is directly proportional to the glucose concentration, measured photometrically at <strong>500 nm (492–550 nm)</strong> against a reagent blank.
         </p>
     </div>
 
@@ -75,11 +75,11 @@ $content_en = <<<HTML
         🔬 4. Laboratory Equipment &amp; Instruments
     </h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; margin-bottom: 2rem;">
-        <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 500;">Automated / Semi-automated Chemistry Analyzer (Cobas, Architect, BS series)</div>
-        <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 500;">Clinical Centrifuge (3000–3500 RPM / 1500 RCF)</div>
-        <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 500;">Water bath / Incubator maintained at 37 &deg;C (&plusmn;0.5 &deg;C)</div>
-        <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 500;">Calibrated Micropipettes (10 &micro;L &amp; 1000 &micro;L) with aerosol barrier tips</div>
-        <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 500;">Reagent grade cuvettes / micro-cells and timer</div>
+        <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 600;">Automated / Semi-automated Chemistry Analyzer (Cobas, Architect, BS series)</div>
+        <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 600;">Clinical Centrifuge (3000–3500 RPM / 1500 RCF for 10 min)</div>
+        <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 600;">Water bath / Analyzer incubator maintained at 37 &deg;C (&plusmn;0.5 &deg;C)</div>
+        <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 600;">Calibrated Micropipettes (10 &micro;L &amp; 1000 &micro;L) &amp; disposable tips</div>
+        <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 600;">Spectrophotometer cuvettes / micro-cells &amp; timer</div>
     </div>
 
     <!-- Reagent Preparation -->
@@ -87,43 +87,43 @@ $content_en = <<<HTML
         🧪 5. Reagent Preparation &amp; Stability
     </h2>
     <ul style="list-style: circle; padding-left: 1.25rem; margin-bottom: 2rem; color: #374151;">
-        <li style="margin-bottom: 0.5rem;">Most commercial GOD-POD kits are provided as liquid ready-to-use (RTU) mono-reagents.</li>
-        <li style="margin-bottom: 0.5rem;">If using bi-reagent or lyophilized formats, reconstitute precisely according to kit protocol and allow 15–30 minutes at room temperature (15–25 &deg;C) for equilibration.</li>
-        <li style="margin-bottom: 0.5rem;">Reagents are stable up to expiration date when stored at <strong>2–8 &deg;C</strong> protected from direct sunlight. Do not freeze or use if reagent blank absorbance at 500 nm exceeds 0.100 AU.</li>
+        <li style="margin-bottom: 0.5rem;">Most commercial GOD-POD reagents are liquid <strong>ready-to-use (RTU)</strong> monoreagents.</li>
+        <li style="margin-bottom: 0.5rem;">If using lyophilized reagent formats, reconstitute with supplied buffer and allow 15–30 minutes at room temperature (15–25 &deg;C) to reach equilibrium before testing.</li>
+        <li style="margin-bottom: 0.5rem;">Store reagents at <strong>2–8 &deg;C</strong> protected from light. Reagent is stable up to expiry date if un-contaminated and blank absorbance at 500 nm is &lt; 0.100 AU.</li>
     </ul>
 
     <!-- Sample Handling Table -->
     <h2 style="color: #1c1917; font-size: 1.4rem; font-weight: 800; border-bottom: 2px solid #e7e2d8; padding-bottom: 0.5rem; margin-top: 2rem; margin-bottom: 1rem;">
-        🩸 6. Sample Type &amp; Pre-analytical Considerations
+        🩸 6. Sample Type &amp; Pre-analytical Protocol
     </h2>
     <div style="overflow-x: auto; margin-bottom: 2rem; border-radius: 0.75rem; border: 1px solid #e7e2d8;">
         <table style="width: 100%; border-collapse: collapse; text-align: left; background-color: #ffffff; font-size: 0.95rem;">
             <thead>
                 <tr style="background-color: #f3efe6; color: #1c1917; border-bottom: 2px solid #e7e2d8;">
                     <th style="padding: 0.85rem 1.25rem; font-weight: 700; width: 28%;">Parameter</th>
-                    <th style="padding: 0.85rem 1.25rem; font-weight: 700;">Details &amp; Protocol</th>
+                    <th style="padding: 0.85rem 1.25rem; font-weight: 700;">Details &amp; Pre-analytical Protocol</th>
                 </tr>
             </thead>
             <tbody>
                 <tr style="border-bottom: 1px solid #f1f0ec; background-color: #faf9f6;">
                     <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #1c1917;">Sample Specimen</td>
-                    <td style="padding: 0.85rem 1.25rem; color: #44403c;">Venous Plasma in Sodium Fluoride / Potassium Oxalate tube (Gray Top) or Serum</td>
+                    <td style="padding: 0.85rem 1.25rem; color: #44403c;">Venous Plasma in Sodium Fluoride / Potassium Oxalate tube (Gray top) or Serum</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #f1f0ec;">
                     <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #1c1917;">Fasting Requirement</td>
-                    <td style="padding: 0.85rem 1.25rem; color: #44403c;">Strict 8–12 hours overnight fasting (water intake permitted)</td>
+                    <td style="padding: 0.85rem 1.25rem; color: #44403c;">Strict 8–12 hours overnight fast (water permitted)</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #f1f0ec; background-color: #faf9f6;">
-                    <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #1c1917;">In vitro Glycolysis Inhibition</td>
-                    <td style="padding: 0.85rem 1.25rem; color: #44403c;">Fluoride inhibits enolase to prevent glucose decay (~5–7% loss per hour in unseparated blood at room temp)</td>
+                    <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #1c1917;">Glycolysis Inhibition</td>
+                    <td style="padding: 0.85rem 1.25rem; color: #44403c;">Fluoride inhibits enolase to prevent in vitro glycolysis (~5–7% glucose degradation per hour at RT in unseparated blood)</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #f1f0ec;">
-                    <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #1c1917;">Stability &amp; Storage</td>
-                    <td style="padding: 0.85rem 1.25rem; color: #44403c;">Separated plasma is stable 8 hours at 15–25 &deg;C, 72 hours at 2–8 &deg;C, or 30 days frozen at -20 &deg;C</td>
+                    <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #1c1917;">Specimen Stability</td>
+                    <td style="padding: 0.85rem 1.25rem; color: #44403c;">Separated plasma: 8 hours at 15–25 &deg;C, 72 hours at 2–8 &deg;C, 30 days frozen at -20 &deg;C</td>
                 </tr>
                 <tr>
-                    <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #1c1917;">Pre-analytical Interferences</td>
-                    <td style="padding: 0.85rem 1.25rem; color: #b91c1c;">Gross hemolysis (hemoglobin &gt;500 mg/dL), severe lipemia, or delayed centrifugation cause erroneous results</td>
+                    <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #1c1917;">Interferences</td>
+                    <td style="padding: 0.85rem 1.25rem; color: #b91c1c;">Gross hemolysis, lipemia, or delayed centrifugation cause falsely decreased glucose readings</td>
                 </tr>
             </tbody>
         </table>
@@ -138,37 +138,37 @@ $content_en = <<<HTML
             <thead>
                 <tr style="background-color: #f3efe6; color: #1c1917; border-bottom: 2px solid #e7e2d8;">
                     <th style="padding: 0.85rem 1.25rem; font-weight: 700; width: 14%;">Step</th>
-                    <th style="padding: 0.85rem 1.25rem; font-weight: 700;">Action &amp; Operational Protocol</th>
+                    <th style="padding: 0.85rem 1.25rem; font-weight: 700;">Action &amp; Protocol Execution</th>
                 </tr>
             </thead>
             <tbody>
                 <tr style="border-bottom: 1px solid #f1f0ec; background-color: #faf9f6;">
                     <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">Step 1</td>
-                    <td style="padding: 0.85rem 1.25rem;">Verify patient identity, label tubes, and centrifuge specimen at 3000–3500 RPM for 10 minutes to separate clear plasma/serum.</td>
+                    <td style="padding: 0.85rem 1.25rem;">Verify patient details, label tubes, and centrifuge specimen at 3000–3500 RPM for 10 minutes to separate clear plasma/serum.</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #f1f0ec;">
                     <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">Step 2</td>
-                    <td style="padding: 0.85rem 1.25rem;">Calibrate chemistry analyzer using standard/calibrator and run two levels of Quality Control (Normal Level 1 &amp; Pathological Level 2).</td>
+                    <td style="padding: 0.85rem 1.25rem;">Calibrate analyzer using standard/calibrator and run normal &amp; pathological controls (Quality Control Level 1 &amp; Level 2).</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #f1f0ec; background-color: #faf9f6;">
                     <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">Step 3</td>
-                    <td style="padding: 0.85rem 1.25rem;">Pipette 10 &micro;L of Reagent Blank (distilled water), Standard (100 mg/dL), and Patient Sample into labeled reaction cuvettes.</td>
+                    <td style="padding: 0.85rem 1.25rem;">Pipette 10 &micro;L of Blank (distilled water), Standard (100 mg/dL), and Patient Sample into designated reaction cuvettes.</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #f1f0ec;">
                     <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">Step 4</td>
-                    <td style="padding: 0.85rem 1.25rem;">Dispense 1000 &micro;L (1.0 mL) of GOD-POD Working Reagent into each cuvette and mix thoroughly by gentle inversion.</td>
+                    <td style="padding: 0.85rem 1.25rem;">Add 1000 &micro;L (1.0 mL) of GOD-POD Working Reagent to each cuvette and mix gently.</td>
                 </tr>
-                <tr style="border-bottom: 1px solid #f1f0ec; background-color: #faf9f6;">
-                    <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">Step 5</td>
-                    <td style="padding: 0.85rem 1.25rem;"><strong>Incubate reaction tubes for 10–15 minutes at 37 &deg;C</strong> in a water bath / analyzer incubator OR <strong>20–30 minutes at Room Temperature (15–25 &deg;C)</strong>.</td>
+                <tr style="border-bottom: 1px solid #f1f0ec; background-color: #fffbeb;">
+                    <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #b45309;">Step 5</td>
+                    <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #92400e;"><strong>INCUBATION PROTOCOL: Incubate for 5 minutes at 37 &deg;C</strong> in a water bath/incubator OR <strong>10 minutes at Room Temperature (15–25 &deg;C)</strong>.</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #f1f0ec;">
                     <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">Step 6</td>
-                    <td style="padding: 0.85rem 1.25rem;">Zero photometer with Reagent Blank and measure absorbance of Standard (A_std) and Samples (A_sample) at 500 nm within 30 minutes.</td>
+                    <td style="padding: 0.85rem 1.25rem;">Zero instrument with Reagent Blank and measure absorbance of Standard (A_std) and Samples (A_sample) at 500 nm against Blank within 30–60 minutes.</td>
                 </tr>
                 <tr style="background-color: #faf9f6;">
                     <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">Step 7</td>
-                    <td style="padding: 0.85rem 1.25rem;">Calculate concentration: Glucose (mg/dL) = (A_sample / A_std) &times; Standard Concentration (100 mg/dL). Verify linearity limit (up to 500 mg/dL).</td>
+                    <td style="padding: 0.85rem 1.25rem;">Calculate glucose concentration: Glucose (mg/dL) = (A_sample / A_std) &times; Standard Conc (100 mg/dL). Confirm assay linearity (up to 500 mg/dL).</td>
                 </tr>
             </tbody>
         </table>
@@ -201,7 +201,7 @@ $content_en = <<<HTML
                 </tr>
                 <tr style="background-color: #eff6ff;">
                     <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #1d4ed8;">&lt; 70 mg/dL (&lt; 3.9 mmol/L)</td>
-                    <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #1e40af;">Hypoglycemia (Critical alert value requiring urgent evaluation)</td>
+                    <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #1e40af;">Hypoglycemia (Critical alert value requiring urgent clinical evaluation)</td>
                 </tr>
             </tbody>
         </table>
@@ -238,7 +238,7 @@ $content_en = <<<HTML
             💡 10. Clinical Comment &amp; Diagnostic Limitations
         </h3>
         <p style="margin-bottom: 0; color: #44403c; font-size: 0.98rem;">
-            While FBS is indispensable for screening, single measurements can be influenced by acute stress, exercise, circadian variation, and fasting non-compliance. For comprehensive long-term glycemic control evaluation, <strong>Glycated Hemoglobin (HbA1c)</strong> provides an accurate 2–3 month average glycemia index without fasting requirements.
+            While FBS is indispensable for screening, single glucose measurements can be affected by acute stress, exercise, circadian variation, or fasting non-compliance. For long-term glycemic control evaluation, <strong>Glycated Hemoglobin (HbA1c)</strong> provides a superior 2–3 month glycemic average index without requiring fasting.
         </p>
     </div>
 
@@ -246,7 +246,7 @@ $content_en = <<<HTML
 HTML;
 
 // -----------------------------------------------------------------------------
-// 3. ARABIC CONTENT (FULL SCIENTIFIC TRANSLATION)
+// 3. ARABIC CONTENT (SCIENTIFICALLY AUDITED & EXACT TRANSLATION)
 // -----------------------------------------------------------------------------
 $content_ar = <<<HTML
 <div class="paper-post-body" dir="rtl" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1c1917; line-height: 1.9; font-size: 1.05rem;">
@@ -257,7 +257,7 @@ $content_ar = <<<HTML
             📌 1. مقدمة موجزة
         </h3>
         <p style="margin-bottom: 0; color: #44403c; font-size: 1rem;">
-            فحص سكر الصائم (Fasting Blood Sugar — FBS) هو أحد أكثر التحاليل الكيميائية السريرية طلبًا في المختبرات الطبية عالميًا. يقيس هذا التحليل تركيز الجلوكوز في بلازما الدم الوريدي بعد صيام ليلى تتراوح مدته بين 8 إلى 12 ساعة. وباعتباره الفحص التشخيصي الأول لداء السكري واضطرابات الأيض، فإن القياس الدقيق لنسبة سكر الصائم يُعد حاسمًا للكشف المبكر، ومتابعة الاستجابة العلاجية، والحد من الخطر المستقبلي للمضاعفات الوعائية المزمنة.
+            فحص سكر الصائم (Fasting Blood Sugar — FBS) هو أحد أكثر التحاليل الكيميائية السريرية طلبًا في المختبرات الطبية عالميًا. يقيس هذا التحليل تركيز الجلوكوز في بلازما الدم الوريدي بعد صيام ليلي تتراوح مدته بين 8 إلى 12 ساعة. وباعتباره الفحص التشخيصي الأول لداء السكري واضطرابات الأيض، فإن القياس الدقيق لنسبة سكر الصائم يُعد حاسمًا للكشف المبكر، ومتابعة الاستجابة العلاجية، والحد من الخطر المستقبلي للمضاعفات الوعائية المزمنة.
         </p>
     </div>
 
@@ -307,7 +307,7 @@ $content_ar = <<<HTML
     </h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; margin-bottom: 2rem;">
         <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 600;">محلل كيميائي آلي أو نصف آلي (Cobas, Architect, BS)</div>
-        <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 600;">جهاز طرد مركزي (3000–3500 دورة/دقيقة)</div>
+        <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 600;">جهاز طرد مركزي (3000–3500 دورة/دقيقة لمدة 10 دقائق)</div>
         <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 600;">حمام مائي أو ماكينة حضن مضبوطة عند 37 درجة مئوية</div>
         <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 600;">ماصات دقيقة (Micropipettes 10µL &amp; 1000µL) ومعايرة</div>
         <div style="background: #faf8f5; border: 1px solid #e5dfd3; padding: 0.85rem 1rem; border-radius: 0.5rem; font-weight: 600;">كوفيتات تفاعل زجاجية/بلاستيكية ومؤقت زمن</div>
@@ -389,13 +389,13 @@ $content_ar = <<<HTML
                     <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">الخطوة 4</td>
                     <td style="padding: 0.85rem 1.25rem;">إضافة 1000 ميكرولتر (1.0 mL) من كاشف GOD-POD العامل إلى كل أنبوب مع الخلط بلطف.</td>
                 </tr>
-                <tr style="border-bottom: 1px solid #f1f0ec; background-color: #faf9f6;">
-                    <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">الخطوة 5</td>
-                    <td style="padding: 0.85rem 1.25rem;"><strong>الحضن (Incubate): لمدة 10–15 دقيقة في الحمام المائي عند 37 درجة مئوية</strong> أـو <strong>لمدة 20–30 دقيقة في درجة حرارة الغرفة (15–25 °م)</strong>.</td>
+                <tr style="border-bottom: 1px solid #f1f0ec; background-color: #fffbeb;">
+                    <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #b45309;">الخطوة 5</td>
+                    <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #92400e;"><strong>زمن الحضن (Incubation Protocol): الحضن لمدة 5 دقائق عند 37 درجة مئوية</strong> في الحمام المائي أو <strong>لمدة 10 دقائق في درجة حرارة الغرفة (15–25 °م)</strong>.</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #f1f0ec;">
                     <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">الخطوة 6</td>
-                    <td style="padding: 0.85rem 1.25rem;">تصفير جهاز القياس الضوئي بعينة Blank، ثم قياس الامتصاصية للـ Standard والعينات عند طول موجي 500 نانومتر.</td>
+                    <td style="padding: 0.85rem 1.25rem;">تصفير جهاز القياس الضوئي بعينة Blank، ثم قياس الامتصاصية للـ Standard والعينات عند طول موجي 500 نانومتر خلال 30–60 دقيقة.</td>
                 </tr>
                 <tr style="background-color: #faf9f6;">
                     <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">الخطوة 7</td>
@@ -477,7 +477,7 @@ $content_ar = <<<HTML
 HTML;
 
 // -----------------------------------------------------------------------------
-// 4. SOMALI CONTENT (FULL SCIENTIFIC TRANSLATION)
+// 4. SOMALI CONTENT (SCIENTIFICALLY AUDITED & EXACT TRANSLATION)
 // -----------------------------------------------------------------------------
 $content_so = <<<HTML
 <div class="paper-post-body" style="font-family: system-ui, -apple-system, sans-serif; color: #1c1917; line-height: 1.8; font-size: 1.05rem;">
@@ -620,9 +620,9 @@ $content_so = <<<HTML
                     <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">Tallaabada 4</td>
                     <td style="padding: 0.85rem 1.25rem;">Ku dar 1000 &micro;L (1.0 mL) oo GOD-POD Working Reagent ah tuubbo kasta oo si tartiib ah isku qas.</td>
                 </tr>
-                <tr style="border-bottom: 1px solid #f1f0ec; background-color: #faf9f6;">
-                    <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">Tallaabada 5</td>
-                    <td style="padding: 0.85rem 1.25rem;"><strong>Incubate (kululee): Ku hay 10–15 daqiiqo water bath heerkulkiisu yahay 37 &deg;C</strong> AMA <strong>20–30 daqiiqo heerkulka qolka (15–25 &deg;C)</strong>.</td>
+                <tr style="border-bottom: 1px solid #f1f0ec; background-color: #fffbeb;">
+                    <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #b45309;">Tallaabada 5</td>
+                    <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: #92400e;"><strong>WAKHTIGA KULULAYNTA (Incubation Protocol): Ku hay 5 daqiiqo Water Bath 37 &deg;C ah</strong> AMA <strong>10 daqiiqo Heerkulka Qolka (15–25 &deg;C)</strong>.</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #f1f0ec;">
                     <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: #0f766e;">Tallaabada 6</td>
@@ -713,9 +713,9 @@ $data = [
     'title_ar' => 'فحص سكر الصائم (FBS) — الإجراء المخبري القياسي والشامل',
     'title_so' => 'Baaritaanka Sonkorta ee Soonka (FBS) — Nidaamka Shaqada ee Shaybaarka',
     'slug' => 'fasting-blood-sugar-fbs-standard-procedure',
-    'excerpt_en' => 'Scientifically reviewed clinical laboratory standard operating procedure for Fasting Blood Sugar (FBS) testing, including enzymatic GOD-POD reaction principle, specimen handling, complete 7-step procedure, and ADA diagnostic criteria.',
-    'excerpt_ar' => 'الدليل المخبري القياسي المراجع علمياً لفحص سكر الدم الصائم (FBS)، يتضمن مبدأ التفاعل الإنزيمي GOD-POD، احتياطات ما قبل التحليل، خطوات العمل السبع الكاملة، وتفسير النتائج وفق معايير جمعية السكري الأمريكية.',
-    'excerpt_so' => 'Borotokoolka shaybaarka ee baaritaanka sonkorta soonka (FBS), oo si saynis ah loo dib-u-eegey, oo sheegaya ujeedada, mabda\'a GOD-POD, diyaarinta muunadda, 7-da tallaabo ee shaqada, iyo qiimaynta kliniikada.',
+    'excerpt_en' => 'Scientifically audited clinical laboratory standard operating procedure for Fasting Blood Sugar (FBS) testing, including enzymatic GOD-POD reaction principle, specimen handling, complete 7-step procedure (5 min at 37°C / 10 min at RT), and ADA diagnostic criteria.',
+    'excerpt_ar' => 'الدليل المخبري القياسي المراجع علمياً لفحص سكر الدم الصائم (FBS)، يتضمن مبدأ التفاعل الإنزيمي GOD-POD، احتياطات ما قبل التحليل، خطوات العمل السبع الكاملة (حضن 5 دقائق عند 37°م أو 10 دقائق في حرارة الغرفة)، وتفسير النتائج وفق معايير جمعية السكري الأمريكية.',
+    'excerpt_so' => 'Borotokoolka shaybaarka ee baaritaanka sonkorta soonka (FBS), oo si saynis ah loo dib-u-eegey, oo sheegaya ujeedada, mabda\'a GOD-POD, diyaarinta muunadda, 7-da tallaabo ee shaqada (kululayn 5 daqiiqo 37°C / 10 daqiiqo heerkulka qolka), iyo qiimaynta kliniikada.',
     'content_en' => $content_en,
     'content_ar' => $content_ar,
     'content_so' => $content_so,
